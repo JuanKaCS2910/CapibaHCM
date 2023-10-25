@@ -1,0 +1,107 @@
+﻿@using Capiba.HCM.Web.Resources
+
+<header class="page-header" role="banner">
+    <partial name="_Logo" />
+    @*@if (ViewBag.AppLayoutShortcut?.Length > 0)
+    {*@
+        <div class="hidden-md-down dropdown-icon-menu position-relative">
+            <a href="#" class="header-btn btn js-waves-off" data-action="toggle" data-class="nav-function-hidden" title="Hide Navigation">
+                <i class="ni ni-menu"></i>
+            </a>
+            <ul>
+                <li>
+                    <a href="#" class="btn js-waves-off" data-action="toggle" id="NavMenu0" data-class="nav-function-minify" title="Minify Navigation">
+                        <i class="ni ni-minify-nav"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="btn js-waves-off" data-action="toggle" data-class="nav-function-fixed" title="Lock Navigation">
+                        <i class="ni ni-lock-nav"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    @*}*@
+    <div class="hidden-lg-up">
+        <a href="#" class="header-btn btn press-scale-down" data-action="toggle" data-class="mobile-nav-on">
+            <i class="ni ni-menu"></i>
+        </a>
+    </div>
+    <div class="search">
+        <form class="app-forms hidden-xs-down" role="search" asp-controller="Page" asp-action="Search" autocomplete="off">
+            <input type="text" id="search-field" placeholder="Search for anything" class="form-control" tabindex="1">
+            <a href="#" onclick="return false;" class="btn-danger btn-search-close js-waves-off d-none" data-action="toggle" data-class="mobile-search-on">
+                @*<i class="@ViewBag.IconPrefix fa-times"></i>*@
+                <i class="fa-times"></i>
+            </a>
+        </form>
+    </div>
+    <div class="ml-auto d-flex">
+        <div class="hidden-sm-up">
+            <a href="#" class="header-icon" data-action="toggle" data-class="mobile-search-on" data-focus="search-field" title="Search">
+                @*<i class="@ViewBag.IconPrefix fa-search"></i>*@
+                <i class="fa-search"></i>
+            </a>
+        </div>
+        @*@if (configuracionInstancia.IdEmpleado != null)
+        {*@
+            <div idSeguridad="Home_col_marcacionPageHeader">
+                <a href="#" class="header-icon btnMarcacion" data-toggle="modal" title="@Resource_HIJKLM.Marcacion" data-target=".js-modal-marcacion">
+                    @*<i class="@ViewBag.IconPrefix fa-watch"></i>*@
+                    <i class="fa-watch"></i>
+                </a>
+            </div>
+        @*}*@
+
+        @*@if (ViewBag.LayoutSettings?.Length > 0)
+        {*@
+            <div class="hidden-md-down" idSeguridad="Home_col_configuracionPageHeader">
+                <a href="#" class="header-icon" data-toggle="modal" data-target=".js-modal-settings">
+                    @*<i class="@ViewBag.IconPrefix fa-cog"></i>*@
+                    <i class="fa-cog"></i>
+                </a>
+            </div>
+        @*}*@
+        <div idSeguridad="Home_col_shortCutPageHeader">
+            <a href="#" class="header-icon" data-toggle="dropdown" title="My Apps">
+                @*<i class="@ViewBag.IconPrefix fa-cube"></i>*@
+                <i class="fa-cube"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-animated w-auto h-auto">
+                <partial name="_DropdownApp" />
+            </div>
+        </div>
+        @*@if (ViewBag.ChatInterface?.Length > 0)
+        {*@
+            <div idSeguridad="Home_col_chatMessengerPageHeader">
+                <a href="#" class="header-icon" data-toggle="modal" data-target=".js-modal-messenger">
+                    @*<i class="@ViewBag.IconPrefix fa-globe"></i>*@
+                    <i class="fa-globe"></i>
+                    <span class="badge badge-icon">!</span>
+                </a>
+            </div>
+
+        @*}*@
+        <div idSeguridad="Home_col_notificacionPageHeader">
+            <a href="#" class="header-icon" data-toggle="dropdown" title="You got 11 notifications">
+                @*<i class="@ViewBag.IconPrefix fa-bell"></i>*@
+                <i class="fa-bell"></i>
+                <span class="badge badge-icon">11</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-animated dropdown-xl">
+                <partial name="_DropdownNotification" />
+            </div>
+        </div>
+        <div>
+            @*<a href="#" data-toggle="dropdown" title="@emailLogeado" class="header-icon d-flex align-items-center justify-content-center ml-2">
+                <img src="@configuracionInstancia.FotoEmpleado" class="profile-image rounded-circle" alt="@nombreCompletoUsuarioActual">
+            </a>*@
+            <a href="#" data-toggle="dropdown" title="Email" class="header-icon d-flex align-items-center justify-content-center ml-2">
+                <img src="" class="profile-image rounded-circle" alt="">
+            </a>
+            <div class="dropdown-menu dropdown-menu-animated dropdown-lg">
+                <partial name="_DropdownMenu" />
+            </div>
+        </div>
+    </div>
+</header>

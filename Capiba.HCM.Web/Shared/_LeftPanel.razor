@@ -1,0 +1,31 @@
+﻿
+<aside class="page-sidebar">
+    <_Logo />
+    @*<partial name="_Logo" />*@
+    <nav id="js-primary-nav" class="primary-nav" role="navigation">
+       @* <partial name="_NavFilter" />
+        <partial name="_NavInfoCard" />*@
+        @*<partial name="_Nav"/>*@
+        <_NavFilter />
+        <_NavInfoCard />
+        <_Nav/>
+        <_NavFilterMsg />
+        @*@await Component.InvokeAsync("Navigation");*@
+        @*<partial name="_NavFilterMsg" />*@
+    </nav>
+    <_NavFooter />
+    @*<partial name="_NavFooter" />*@
+</aside>
+
+
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

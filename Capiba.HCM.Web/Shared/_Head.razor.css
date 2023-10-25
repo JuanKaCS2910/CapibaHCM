@@ -1,0 +1,137 @@
+﻿.panel-tag {
+    background: #E4E4E4;
+}
+
+.k-grid .k-grid-search {
+    margin-left: auto;
+    margin-right: 0;
+    width: 15.7em;
+    float: right;
+}
+
+.k-btn-right {
+    float: right;
+}
+/*.bg-color-sch {
+        background-color: #12AFCB;
+    }*/
+.itmSeleccionadoActual {
+    background: rgba(185, 244, 255, 0.19);
+}
+
+@*Color de los botones deslizables, coincide con el logo de la empresa*@ .btn_desliz .cd-pricing-switcher .cd-switch {
+    background-color: @configuracionGeneral.colorTablas !important;
+}
+
+.btn_desliz .cd-pricing-switcher .fieldset {
+    border-color: @configuracionGeneral.colorTablas !important;
+}
+
+@*Cambiar el color del logo de empresa*@ .k-primary {
+    background-color: @configuracionGeneral.colorTablas !important;
+    border-color: @configuracionGeneral.colorTablas !important;
+}
+
+@*Cambiar el color de los grid*@ .k-grid-toolbar {
+    background-color: @configuracionGeneral.colorTablas !important;
+    border-color: #ffffff !important;
+}
+
+.k-grouping-header {
+    background-color: @configuracionGeneral.colorTablas !important;
+}
+
+.k-grid .k-header .k-button, .k-scheduler .k-header .k-button, .k-scheduler .k-header li, .k-scheduler .k-header .k-link, .k-gantt > .k-header li, .k-gantt > .k-header .k-link, .k-gantt-toolbar .k-button, .km-pane-wrapper .k-header .k-button {
+    background-color: @configuracionGeneral.colorTablas !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+@*Cambiar el color de los Calendario scheduler*@ .k-scheduler-toolbar {
+    background-color: @configuracionGeneral.colorTablas !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+@*Cambiar el color de los Calendario de fecha*@ .k-calendar>.k-header {
+    background-color: @configuracionGeneral.colorTablas !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+@*Cambiar el color de los panel de informacion*@ .k-tabstrip-wrapper>.k-header, .k-tabstrip .k-tabstrip-items .k-link {
+    background-color: @configuracionGeneral.colorTablas !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+.k-grid-toolbar > .k-button {
+    background-color: @configuracionGeneral.colorTablas !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+    border: 1px solid;
+}
+
+#modal_3d_cuerpo > img {
+    max-width: 100%;
+}
+
+#modal_3d > header {
+    max-height: 66px;
+    padding-top: 1em;
+}
+
+fieldset {
+    border: 1px solid #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow: 0px 0px 0px 0px #000;
+    box-shadow: 0px 0px 0px 0px #000;
+}
+
+legend {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    padding: 0 10px !important;
+    width: auto !important;
+    border-bottom: none !important;
+}
+
+@*Arreglar iconos custom*@ .k-button-icontext {
+    min-height: 36px !important;
+    opacity: 1 !important;
+    border-radius: 2px !important;
+    text-transform: none !important;
+    color: #4679cc;
+    border-color: #4679cc;
+    border: 1px solid;
+}
+
+.k-button-icontext:hover {
+    color: #fff;
+    background-color: #4679cc;
+    border-color: #4679cc;
+    border: 1px solid;
+}
+
+.k-grid-delete {
+    min-height: 36px !important;
+    opacity: 1 !important;
+    border-radius: 2px !important;
+    text-transform: none !important;
+    color: #ff0000;
+    border-color: #ff0000;
+    border: 1px solid;
+}
+
+    .k-grid-delete:hover {
+        color: #fff;
+        background-color: #ff0000;
+        border-color: #ff0000;
+        border: 1px solid;
+    }
+
+.k-grid .k-icon {
+    opacity: 1 !important;
+}

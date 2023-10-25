@@ -1,0 +1,147 @@
+﻿@page "/Login"
+
+@layout _LayoutLogin
+@inject NavigationManager NavigationManager
+@*<link href="~/css/login/login.css" rel="stylesheet" />*@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+
+        <!-- Inicio Formulario de inicio de sesión -->
+        <div class="col-md-6 order-md-1">
+            <!-- BEGIN login -->
+            <div class="login login-v1">
+                <!-- BEGIN login-container -->
+                <div class="login-container">
+                    <!-- BEGIN login-header -->
+                    <div class="login-header">
+                        <div class="brand">
+                            <div class="d-flex align-items-center">
+                                <span class="logo"></span> <b>CAPIBARA</b> &nbsp RRHH
+                            </div>
+                            <small>Favor de Ingresar los datos correspondientes.</small>
+                        </div>
+                    </div>
+                    <!-- END login-header -->
+                    <!-- BEGIN login-body -->
+                    <div class="login-body">
+                        <!-- BEGIN login-content -->
+                        <div class="login-content fs-13px">
+                            <span class="hovertext" id="spanObligatorio" data-hover="Favor de ingresar el usuario">
+                                <div class="form-floating mb-20px">
+                                    <input type="text" class="form-control fs-13px h-45px" id="usuario" placeholder="Usuario" />
+                                    <label for="usuario" class="d-flex align-items-center py-0">Usuario</label>
+                                </div>
+                            </span>
+
+                            <span class="hovertext" id="spanObligatorio1" data-hover="Favor de ingresar la contraseña">
+                                <div class="form-floating mb-20px">
+                                    <input type="password" class="form-control fs-13px h-45px" id="password" placeholder="Contraseña" />
+                                    <label for="password" class="d-flex align-items-center py-0">Contraseña</label>
+                                </div>
+                            </span>
+
+                            <div class="separador-login"></div>
+
+                            <div class="form-check mb-20px">
+                                <input class="form-check-input" type="checkbox" value="" id="rememberMe" />
+                                <label class="form-check-label" for="rememberMe">
+                                    Remember Me
+                                </label>
+                            </div>
+                            <div class="login-buttons">
+                                <button type="button" id="AceptarLogin" @onclick="Redireccionar" class="btn h-45px d-block w-100 btn-lg btnLogin">Aceptar</button>
+                            </div>
+
+                        </div>
+                        <!-- END login-content -->
+                    </div>
+                    <!-- END login-body -->
+
+
+                </div>
+                <!-- END login-container -->
+
+            </div>
+            <!-- END login -->
+        </div>
+        <!-- Carrusel de imágenes a la derecha -->
+        <div class="col-md-6 order-md-2">
+            <div class="contactanos-carousel">
+                <a href="" value="Contactanos">Contactanos</a>
+                <a href="" value="Contactanos">Soporte</a>
+            </div>
+
+
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100 imgLogin" src="images/Login/imagen1.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 imgLogin" src="images/Login/imagen2.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 imgLogin" src="images/Login/imagen3.jpg" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+
+            @*<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="imgLogin" src="images/Login/imagen1.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="imgLogin" src="images/Login/imagen2.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="imgLogin" src="images/Login/imagen3.jpg" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>*@
+
+            @*<div class="owl-carousel">
+                <div class="item"><img class="imgLogin" src="images/Login/imagen1.jpg" alt="Imagen 1"></div>
+                <div class="item"><img class="imgLogin" src="images/Login/imagen2.jpg" alt="Imagen 2"></div>
+                <div class="item"><img class="imgLogin" src="images/Login/imagen3.jpg" alt="Imagen 3"></div>
+                <!-- Agrega más imágenes según tus necesidades -->
+            </div>*@
+        </div>
+    </div>
+</div>
+
+@code {
+    private void Redireccionar()
+    {
+        NavigationManager.NavigateTo("Home");
+    }
+}
+

@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.10" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="wwwroot\css\themes\" />
+    <Folder Include="wwwroot\css\Plantilla\Content\assets\" />
+    <Folder Include="wwwroot\css\Plantilla\Content\Kendo\2021.2.515\images\" />
+    <Folder Include="wwwroot\css\Plantilla\css\" />
+    <Folder Include="wwwroot\css\Plantilla\NewFolder\" />
+    <Folder Include="wwwroot\images\Login\" />
+    <Folder Include="wwwroot\images\Logo\" />
+    <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\Kendo\2021.2.515\Scripts\js\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\Plantilla\Content\Kendo\2021.2.515\kendo.common-material.min.css.map" />
+    <None Include="wwwroot\css\Plantilla\Content\Kendo\2021.2.515\kendo.common.min.css.map" />
+    <None Include="wwwroot\css\Plantilla\Content\Kendo\2021.2.515\kendo.dataviz.min.css.map" />
+    <None Include="wwwroot\css\Plantilla\Content\Kendo\2021.2.515\kendo.material.min.css.map" />
+    <None Include="wwwroot\css\Plantilla\Content\Kendo\2021.2.515\kendo.mobile.all.min.css.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Capiba.HCM.Shared\Capiba.HCM.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

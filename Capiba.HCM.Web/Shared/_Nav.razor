@@ -1,0 +1,154 @@
+﻿@using Capiba.HCM.Shared.DTOs;
+@using Capiba.HCM.Web.Repositorios;
+
+
+@inject IRepositorio repository
+
+
+
+<ul id="js-nav-menu" class="nav-menu">
+    @foreach (var group in Menus.ToList())
+    {
+        @if (group.Items.Any())
+        {
+            var groups = group.Items.Select(x => System.IO.Path.GetFileNameWithoutExtension(x.Href)).Where(x => x != "javascript:void(0);").ToList();
+
+            group.Items.ForEach(item =>
+            {
+                var result = item.Items?.Select(x => System.IO.Path.GetFileNameWithoutExtension(x.Href)).Where(x => x != "javascript:void(0);").ToList();
+                if (result?.Any() == true)
+                {
+                    groups = groups.Concat(result).ToList();
+                }
+            });
+
+            <li class="">
+                <a href="#" title="@group.Title" data-filter-tags="@group.Tags">
+                    <i class="@group.Icon"></i>
+                    <span class="nav-link-text" data-i18n="@group.I18n">@group.Text</span>
+                    @if (group.Span.HasValue())
+                    {
+                        <span class="@group.Span.Class">@group.Span.Text</span>
+                    }
+                </a>
+
+                <ul class="NavLongitud">
+                    @{
+                        foreach (var item in group.Items)
+                        {
+                            var items = item.Items?.Select(x => System.IO.Path.GetFileNameWithoutExtension(x.Href)).Where(x => x != "javascript:void(0);").ToList();
+
+                            if (item.Disabled)
+                            {
+                                <text>
+                                    <li class="disabled">
+                                        <text>
+                                            <a href="@item.Route" title="@item.Title" data-filter-tags="@item.Tags">
+                                                    @*<i class="fal fa-info-circle"></i>*@
+                                                <span class="nav-link-text" data-i18n="@item.I18n">@item.Text</span>
+                                                    @if (item.Span.HasValue())
+                                                    {
+                                                    <span class="@item.Span.Class">@item.Span.Text</span>
+                                                    }
+                                            </a>
+                                        </text>
+
+                                        @if(item.Items?.Any() == true)
+                                        {
+                                            <text>
+                                                <ul>
+                                                    @foreach (var subItem in item.Items)
+                                                    {
+                                                        if (subItem.Disabled)
+                                                        {
+                                                            <text>
+                                                                <li class="disabled">
+                                                                    <a href="@subItem.Route" title="@subItem.Title" data-filter-tags="@subItem.Tags">
+                                                                        <span class="nav-link-text" data-i18n="@subItem.I18n">@subItem.Text</span>
+                                                                    </a>
+                                                                </li>
+                                                            </text>
+                                                        }
+                                                        else
+                                                        {
+                                                            <text>
+                                                                <li class="">
+                                                                    <a href="@subItem.Route" title="@subItem.Title" data-filter-tags="@subItem.Tags">
+                                                                        <span class="nav-link-text" data-i18n="@subItem.I18n">@subItem.Text</span>
+                                                                    </a>
+                                                                </li>
+                                                            </text>
+                                                        }
+                                                    }
+                                                </ul>
+                                            </text>
+                                        }
+
+
+                                    </li>
+                                </text>
+                            }
+                            else
+                            {
+                                if (items?.Any() == true)
+                                {
+                                    <text>
+                                        <li class="">
+                                            <text>
+                                                <a href="@item.Route" title="@item.Title" data-filter-tags="@item.Tags">
+                                                        @*<i class="fal fa-info-circle"></i>*@
+                                                    <span class="nav-link-text" data-i18n="@item.I18n">@item.Text</span>
+                                                        @if (item.Span.HasValue())
+                                                        {
+                                                        <span class="@item.Span.Class">@item.Span.Text</span>
+                                                        }
+                                                </a>
+                                            </text>
+
+
+
+
+                                        </li>
+                                    </text>
+                                }
+                                else
+                                {
+                                    <text>
+                                        <li class="">
+                                            <text>
+                                                <a href="@item.Route" title="@item.Title" data-filter-tags="@item.Tags">
+                                                        @*<i class="fal fa-info-circle"></i>*@
+                                                    <span class="nav-link-text" data-i18n="@item.I18n">@item.Text</span>
+                                                        @if (item.Span.HasValue())
+                                                        {
+                                                        <span class="@item.Span.Class">@item.Span.Text</span>
+                                                        }
+                                                </a>
+                                            </text>
+
+
+                                        </li>
+                                    </text>
+                                }
+                            }
+                        }
+                    }
+                </ul>
+
+            </li>
+        }
+    }    
+</ul>
+
+
+
+@code {
+    public List<ListItemDTO> Menus { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var responseHttp = await repository.Get<List<ListItemDTO>>("/Navigation");
+        Menus = responseHttp.Response;
+    }
+
+}
