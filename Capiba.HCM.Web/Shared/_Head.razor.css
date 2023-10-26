@@ -19,7 +19,8 @@
     background: rgba(185, 244, 255, 0.19);
 }
 
-@*Color de los botones deslizables, coincide con el logo de la empresa*@ .btn_desliz .cd-pricing-switcher .cd-switch {
+/*Color de los botones deslizables, coincide con el logo de la empresa*/
+.btn_desliz .cd-pricing-switcher .cd-switch {
     background-color: @configuracionGeneral.colorTablas !important;
 }
 
@@ -27,12 +28,14 @@
     border-color: @configuracionGeneral.colorTablas !important;
 }
 
-@*Cambiar el color del logo de empresa*@ .k-primary {
+/*Cambiar el color del logo de empresa*/
+.k-primary {
     background-color: @configuracionGeneral.colorTablas !important;
     border-color: @configuracionGeneral.colorTablas !important;
 }
 
-@*Cambiar el color de los grid*@ .k-grid-toolbar {
+/*Cambiar el color de los grid*/
+.k-grid-toolbar {
     background-color: @configuracionGeneral.colorTablas !important;
     border-color: #ffffff !important;
 }
@@ -53,13 +56,15 @@
     color: #ffffff !important;
 }
 
-@*Cambiar el color de los Calendario de fecha*@ .k-calendar>.k-header {
+/*Cambiar el color de los Calendario de fecha*/
+.k-calendar>.k-header {
     background-color: @configuracionGeneral.colorTablas !important;
     border-color: #ffffff !important;
     color: #ffffff !important;
 }
 
-@*Cambiar el color de los panel de informacion*@ .k-tabstrip-wrapper>.k-header, .k-tabstrip .k-tabstrip-items .k-link {
+/*Cambiar el color de los panel de informacion*/
+.k-tabstrip-wrapper>.k-header, .k-tabstrip .k-tabstrip-items .k-link {
     background-color: @configuracionGeneral.colorTablas !important;
     border-color: #ffffff !important;
     color: #ffffff !important;
@@ -98,7 +103,8 @@ legend {
     border-bottom: none !important;
 }
 
-@*Arreglar iconos custom*@ .k-button-icontext {
+/*Arreglar iconos custom*/
+.k-button-icontext {
     min-height: 36px !important;
     opacity: 1 !important;
     border-radius: 2px !important;
