@@ -131,12 +131,12 @@ legend {
     border: 1px solid;
 }
 
-    .k-grid-delete:hover {
-        color: #fff;
-        background-color: #ff0000;
-        border-color: #ff0000;
-        border: 1px solid;
-    }
+.k-grid-delete:hover {
+    color: #fff;
+    background-color: #ff0000;
+    border-color: #ff0000;
+    border: 1px solid;
+}
 
 .k-grid .k-icon {
     opacity: 1 !important;
