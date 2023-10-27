@@ -68,7 +68,9 @@
                 <i class="fa-cube"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-animated w-auto h-auto">
-                <partial name="_DropdownApp" />
+                @*<partial name="_DropdownApp" />*@
+                <_DropdownApp />
+                
             </div>
         </div>
         @*@if (ViewBag.ChatInterface?.Length > 0)
@@ -89,7 +91,9 @@
                 <span class="badge badge-icon">11</span>
             </a>
             <div class="dropdown-menu dropdown-menu-animated dropdown-xl">
-                <partial name="_DropdownNotification" />
+                @*<partial name="_DropdownNotification" />*@
+                <_DropdownNotification />
+
             </div>
         </div>
         <div>
@@ -100,7 +104,8 @@
                 <img src="" class="profile-image rounded-circle" alt="">
             </a>
             <div class="dropdown-menu dropdown-menu-animated dropdown-lg">
-                <partial name="_DropdownMenu" />
+                @*<partial name="_DropdownMenu" />*@
+                <_DropdownMenu />
             </div>
         </div>
     </div>

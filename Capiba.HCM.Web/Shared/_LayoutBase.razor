@@ -1,4 +1,5 @@
-﻿@inherits LayoutComponentBase
+﻿@using Capiba.HCM.Web.Resources;
+@inherits LayoutComponentBase
 @inject IJSRuntime JS
 
 
@@ -12,11 +13,50 @@
     @*@RenderSection("HeadBlock", required: false)*@
 </head>
 <body class="mod-bg-1 ">
+
+    <input type="hidden" id="SeEliminoCorrectamente" value="@Resource_QRSTU.SeEliminoCorrectamente">
+    <input type="hidden" id="NoSePudoEliminar" value="@Resource_NOP.NoSePudoEliminar">
+    <input type="hidden" id="SeActualizoCorrectamente" value="@Resource_QRSTU.SeActualizoCorrectamente">
+    <input type="hidden" id="NoSePudoActualizar" value="@Resource_NOP.NoSePudoActualizar">
+    <input type="hidden" id="SeRegistroCorrectamente" value="@Resource_QRSTU.SeRegistroCorrectamente">
+    <input type="hidden" id="NoSePudoRegistrar" value="@Resource_NOP.NoSePudoRegistrar">
+    <input type="hidden" id="SeHaProducidoUnError" value="@Resource_QRSTU.SeHaProducidoUnError">
+    <input type="hidden" id="CaObligatoriosIncompletos" value="@Resource_QRSTU.CaObligatoriosIncompletos">
+    <input type="hidden" id="MeObligatoriosIncompletos" value="@Resource_QRSTU.MeObligatoriosIncompletos">
+    <input type="hidden" id="auditoria" value="@Resource_ABC.Auditoria" />
+    <input type="hidden" id="exito" value="@Resource_DEFG.Exito" />
+    <input type="hidden" id="error" value="@Resource_DEFG.Error" />
+    <input type="hidden" id="SeleccionePuesto" value="@Resource_QRSTU.SeleccionePuesto" />
+    <input type="hidden" id="SeleccioneColaborador" value="@Resource_QRSTU.SeleccioneColaborador" />
+    <input type="hidden" id="SeleccioneRol" value="@Resource_QRSTU.SeleccioneRol" />
+    <input type="hidden" id="CopiarFlujo" value="@Resource_ABC.CopiarFlujo" />
+    <input type="hidden" id="CopiarFormulario" value="@Resource_ABC.CopiarFormulario" />
+    <input type="hidden" id="Guardar" value="@Resource_DEFG.Guardar" />
+
     <div class="page-wrapper">
         <div class="page-inner">
             <_LeftPanel />
             <div class="page-content-wrapper">
+                
                 <_PageHeader />
+                <main id="js-page-content" role="main" class="page-content">
+                    @*@if (ViewBag.PreemptiveClass?.Length > 0)
+                    {
+                    }
+                    else
+                    {
+                        <partial name="_PageBreadcrumb" />
+                        <div class="subheader">
+                            <partial name="_PageHeading" />
+                            @RenderSection("SubheaderBlock", required: false)
+                        </div>
+                    }
+                    @RenderBody()*@
+
+                    <_PageBreadcrumb />
+
+                </main>
+
             </div>
         </div>
     </div>
